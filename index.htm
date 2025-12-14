@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Even or Odd Checker</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 35px;
+        width: 350px;
+        border-radius: 12px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h2 {
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 6px rgba(102,126,234,0.6);
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        background: #667eea;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+    }
+
+    #result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #444;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h2>Even or Odd Checker</h2>
+
+    <input type="number" id="num" placeholder="Enter the number">
+    <button onclick="check()">Check Number</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function check() {
+    let n = document.getElementById("num").value;
+
+    if (n === "") {
+        document.getElementById("result").innerText = "Please enter a number";
+        return;
+    }
+
+    if (n % 2 === 0)
+        document.getElementById("result").innerText = n + " is Even";
+    else
+        document.getElementById("result").innerText = n + " is Odd";
+}
+</script>
+
+</body>
+</html>
